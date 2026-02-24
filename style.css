@@ -1,0 +1,102 @@
+:root {
+    --primary-blue: #1e293b;
+    --accent-blue: #3b82f6;
+    --green: #10b981;
+    --red: #ef4444;
+    --bg-gray: #f8fafc;
+    --border-gray: #e2e8f0;
+    --text-gray: #64748b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--primary-blue);
+    margin: 0;
+    padding: 20px;
+}
+
+.container { max-width: 900px; margin: 0 auto; }
+
+/* Dashboard Stats */
+.stats-row { display: flex; gap: 20px; margin: 20px 0 40px; }
+.stat-card {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.stat-label { display: block; font-size: 0.8rem; color: var(--text-gray); margin-bottom: 5px; }
+.stat-value { font-size: 1.5rem; font-weight: bold; }
+.stat-value.total { color: var(--primary-blue); }
+.stat-value.interview { color: var(--green); }
+.stat-value.rejected { color: var(--red); }
+
+/* Tabs */
+.section-header { display: flex; justify-content: space-between; align-items: center; }
+.job-count { font-size: 0.9rem; color: var(--text-gray); }
+.tabs { display: flex; gap: 10px; margin: 15px 0 25px; }
+.tab-btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--border-gray);
+    background: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+.tab-btn.active { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
+
+/* Job Card */
+.job-card {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid var(--border-gray);
+}
+.company-name { color: #0f172a; font-size: 1.1rem; font-weight: bold; margin: 0; }
+.position { color: var(--text-gray); font-size: 0.9rem; margin: 4px 0 8px; }
+.job-info { color: var(--text-gray); font-size: 0.85rem; margin-bottom: 12px; }
+.status-tag {
+    display: inline-block;
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.description { font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px; color: #334155; }
+
+/* Buttons */
+.card-actions { display: flex; gap: 12px; }
+.btn-interview, .btn-rejected {
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    transition: 0.2s;
+}
+.btn-interview { border: 1px solid var(--green); color: var(--green); }
+.btn-rejected { border: 1px solid var(--red); color: var(--red); }
+.btn-interview:hover { background: var(--green); color: white; }
+.btn-rejected:hover { background: var(--red); color: white; }
+
+.delete-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-gray);
+}
+
+.empty-state { text-align: center; padding: 60px; color: var(--text-gray); }
+.hidden { display: none; }
